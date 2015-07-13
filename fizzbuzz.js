@@ -15,7 +15,7 @@ function arrayEquals(arr1, arr2) {
  */
 
 function sum(a, b){
-    a + b,
+    return a + b;
 }
 
 console.assert(sum(8, 11) === 19);
@@ -28,10 +28,13 @@ console.assert(sum(4, 100) === 104);
  */
 
 function sumOfArray(arr){
-    var sum = 0
-arr[x]
-    return sum
-}
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++){
+        var current = arr[i];
+        sum += current;
+    }
+
+    return sum;
 }
 
 console.assert(sumOfArray([1, 2]) === 3);
@@ -49,7 +52,18 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
  */
 
 function GCD(a, b){
-    // YOUR CODE HERE
+    function denominators(num) {
+    var denoms = [];
+
+    for (var x = 1; x <= num; x++) {
+        if (num % x === 0) {
+            denoms.push(x);
+        }
+    }
+
+    return denoms;
+}
+
 }
 
 console.assert(GCD(5,1) === 1);
