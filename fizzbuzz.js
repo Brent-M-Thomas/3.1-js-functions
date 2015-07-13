@@ -29,8 +29,9 @@ console.assert(sum(4, 100) === 104);
 
 function sumOfArray(arr){
     var sum = 0
-
+arr[x]
     return sum
+}
 }
 
 console.assert(sumOfArray([1, 2]) === 3);
