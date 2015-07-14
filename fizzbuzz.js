@@ -15,7 +15,7 @@ function arrayEquals(arr1, arr2) {
  */
 
 function sum(a, b){
-    // YOUR CODE HERE
+    return a + b;
 }
 
 console.assert(sum(8, 11) === 19);
@@ -28,9 +28,13 @@ console.assert(sum(4, 100) === 104);
  */
 
 function sumOfArray(arr){
-    var sum = 0
-    // YOUR CODE HERE
-    return sum
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++){
+        var current = arr[i];
+        sum += current;
+    }
+
+    return sum;
 }
 
 console.assert(sumOfArray([1, 2]) === 3);
@@ -47,8 +51,26 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
  * You should use the denominators function from today's class
  */
 
+function denominators(num) {
+    var denoms = [];
+    for (var x = 1; x <= num; x++) {
+        if (num % x === 0) {
+            denoms.push(x);
+        }
+    }
+    return denoms;
+}
+
 function GCD(a, b){
-    // YOUR CODE HERE
+    var denomsA = denominators(a);
+    var denomsB = denominators(b);
+
+    for (var c = denomsA.length; c >= 0; c--){
+        var current = denomsA[c];
+        if (denomsB.indexOf(current) !== -1){
+            return current;
+        }
+    }
 }
 
 console.assert(GCD(5,1) === 1);
@@ -63,7 +85,16 @@ console.assert(GCD(50,20) === 10);
  */
 
 function LCM(a, b){
-    // YOUR CODE HERE
+    var ceilingLCM = a * b;
+
+    for (var x = a; x <= ceilingLCM; x++) {
+        if (a === 0 || b === 0){
+            return 1}
+            else if(x % a === 0 && x % b === 0){
+            return x
+        }
+    }
+
 }
 
 console.assert(LCM(10,10) === 10)
@@ -82,7 +113,20 @@ console.assert(LCM(0,1) === 1)
  */
 
 function fizzbuzz(N){
-    // YOUR CODE HERE
+    var results = "";
+    for (var x = 1; x <= N; x++) {
+        if (x % 3 !== 0 && x % 5 !== 0){
+         results += "."
+        }
+        else if (x % 3 === 0){
+            results += "fizz";
+        }
+        else if (x % 5 === 0){
+            results += "buzz";
+        }
+        else results += "fizzbuzz";
+    }
+    return results;
 }
 
 console.assert(fizzbuzz(1) === ".")
