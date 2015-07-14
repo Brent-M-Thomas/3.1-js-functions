@@ -51,9 +51,9 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
  * You should use the denominators function from today's class
  */
 
-function denominators(a) {
+function denominators(num) {
     var denoms = [];
-    for (var x = 1; x < a; x++) {
+    for (var x = 1; x <= num; x++) {
         if (num % x === 0) {
             denoms.push(x);
         }
@@ -65,14 +65,13 @@ function GCD(a, b){
     var denomsA = denominators(a);
     var denomsB = denominators(b);
 
-    for (var c = denomsA.length; c = 0; c--){
+    for (var c = denomsA.length; c >= 0; c--){
         var current = denomsA[c];
-        if (denomsB.indexOf(current)=current){
-            return current
-        }
-        }
+        if (denomsB.indexOf(current) !== -1){
+            return current;
         }
     }
+}
 
 console.assert(GCD(5,1) === 1);
 console.assert(GCD(15,3) === 3);
@@ -87,8 +86,11 @@ console.assert(GCD(50,20) === 10);
 
 function LCM(a, b){
     var ceilingLCM = a * b;
-    for (x = 0; x < ceilingLCM.length; x++){
-        if (x % a === 0 && x % b === 0){
+
+    for (var x = a; x <= ceilingLCM; x++) {
+        if (a === 0 || b === 0){
+            return 1}
+            else if(x % a === 0 && x % b === 0){
             return x
         }
     }
@@ -111,14 +113,20 @@ console.assert(LCM(0,1) === 1)
  */
 
 function fizzbuzz(N){
-    for (var x = 0; x < N; x++)
-        if {(x % 3 !== 0) && (x % 5 !== 0)}
-         return "."
-        else if {x % 3 === 0}
-            return "fizz",
-        else if {x % 5 === 0}
-            return "buzz",
-        else return "fizzbuzz"
+    var results = "";
+    for (var x = 1; x <= N; x++) {
+        if (x % 3 !== 0 && x % 5 !== 0){
+         results += "."
+        }
+        else if (x % 3 === 0){
+            results += "fizz";
+        }
+        else if (x % 5 === 0){
+            results += "buzz";
+        }
+        else results += "fizzbuzz";
+    }
+    return results;
 }
 
 console.assert(fizzbuzz(1) === ".")
