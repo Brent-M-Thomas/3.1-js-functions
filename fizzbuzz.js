@@ -51,20 +51,28 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
  * You should use the denominators function from today's class
  */
 
-function GCD(a, b){
-    function denominators(num) {
+function denominators(a) {
     var denoms = [];
-
-    for (var x = 1; x <= num; x++) {
+    for (var x = 1; x < a; x++) {
         if (num % x === 0) {
             denoms.push(x);
         }
     }
-
     return denoms;
 }
 
-}
+function GCD(a, b){
+    var denomsA = denominators(a);
+    var denomsB = denominators(b);
+
+    for (var c = denomsA.length; c = 0; c--){
+        var current = denomsA[c];
+        if (denomsB.indexOf(current)=current){
+            return current
+        }
+        }
+        }
+    }
 
 console.assert(GCD(5,1) === 1);
 console.assert(GCD(15,3) === 3);
@@ -78,7 +86,13 @@ console.assert(GCD(50,20) === 10);
  */
 
 function LCM(a, b){
-    // YOUR CODE HERE
+    var ceilingLCM = a * b;
+    for (x = 0; x < ceilingLCM.length; x++){
+        if (x % a === 0 && x % b === 0){
+            return x
+        }
+    }
+
 }
 
 console.assert(LCM(10,10) === 10)
@@ -97,7 +111,14 @@ console.assert(LCM(0,1) === 1)
  */
 
 function fizzbuzz(N){
-    // YOUR CODE HERE
+    for (var x = 0; x < N; x++)
+        if {(x % 3 !== 0) && (x % 5 !== 0)}
+         return "."
+        else if {x % 3 === 0}
+            return "fizz",
+        else if {x % 5 === 0}
+            return "buzz",
+        else return "fizzbuzz"
 }
 
 console.assert(fizzbuzz(1) === ".")
